@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MATTEO VERGARI // GAME DEVELOPER</title>
+  <meta name="description" content="Game developer portfolio — Matteo Vergari. Games, experiments, and interactive experiences.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23020810'/%3E%3Ctext x='4' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300e5ff'%3EMV%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── LOADING SCREEN ────────────────────────────────── -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">MV//</div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar"></div>
+    </div>
+    <div class="loader-text">INITIALIZING PORTFOLIO</div>
+  </div>
+
+  <!-- ── ATMOSPHERIC FX ────────────────────────────────── -->
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- ── NAVIGATION ───────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a class="nav-logo" href="index.html" aria-label="Home">
+      MV<span>//</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#projects">PROJECTS</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+
+    <!-- Neon color control -->
+    <div class="neon-control" aria-label="Neon color control">
+      <span class="neon-control-label">NEON</span>
+      <div class="neon-slider-wrap">
+        <span class="neon-slider-icon">Y</span>
+        <input type="range" id="neonSlider" min="55" max="200" value="185" aria-label="Neon hue">
+        <span class="neon-slider-icon">C</span>
+      </div>
+      <div class="neon-presets" aria-label="Color presets"></div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────── -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-horizon" aria-hidden="true"></div>
+
+    <!-- Corner brackets -->
+    <div class="corner-tl" aria-hidden="true"></div>
+    <div class="corner-tr" aria-hidden="true"></div>
+    <div class="corner-bl" aria-hidden="true"></div>
+    <div class="corner-br" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">// GAME DEVELOPER &amp; DESIGNER</div>
+
+      <h1 class="hero-title glitch" data-text="MATTEO VERGARI">
+        <span class="line">MATTEO</span>
+        <span class="line line-neon">VERGARI</span>
+      </h1>
+
+      <div class="hero-subtitle">CRAFTING WORLDS &nbsp;//&nbsp; BUILDING EXPERIENCES</div>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">VIEW PROJECTS</a>
+        <a href="#contact" class="btn btn-outline">GET IN TOUCH</a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ──────────────────────────────────────── -->
+  <section id="projects" aria-label="Projects">
+    <div class="section">
+      <div class="section-header reveal">
+        <span class="section-label">// WORK</span>
+        <h2 class="section-title">GAME PROJECTS</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- JS populates this -->
+      <div class="projects-grid reveal-stagger" id="projectsGrid" role="list"></div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ───────────────────────────────────────── -->
+  <section id="contact" class="contacts-section" aria-label="Contact">
+    <div class="section">
+      <div class="section-header reveal">
+        <span class="section-label">// CONNECT</span>
+        <h2 class="section-title">FIND ME HERE</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- JS populates this -->
+      <div class="contacts-grid reveal-stagger" role="list"></div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-logo">MV//</div>
+    <div class="footer-copy">
+      MATTEO VERGARI &nbsp;·&nbsp; <span id="footerYear"></span>
+    </div>
+    <div class="footer-status">
+      <div class="status-dot" aria-hidden="true"></div>
+      AVAILABLE FOR WORK
+    </div>
+  </footer>
+
+  <!-- Mobile neon panel -->
+  <div class="neon-panel-mobile" aria-label="Neon color control">
+    <span class="neon-control-label">NEON COLOR</span>
+    <input type="range" id="neonSliderMobile" min="55" max="200" value="185" aria-label="Neon hue mobile">
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/projects-data.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Sync mobile slider -->
+  <script>
+    (function() {
+      var mob = document.getElementById('neonSliderMobile');
+      var desk = document.getElementById('neonSlider');
+      if (!mob || !desk) return;
+      mob.value = desk.value;
+      mob.addEventListener('input', function() {
+        desk.value = mob.value;
+        desk.dispatchEvent(new Event('input'));
+      });
+    })();
+  </script>
+</body>
+</html>
