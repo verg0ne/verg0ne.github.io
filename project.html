@@ -3,96 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROJECT // MATTEO VERGARI</title>
-  <meta name="description" content="Game project details — Matteo Vergari portfolio">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
+  <title>Project // MATTEO VERGARI</title>
+  <meta name="description" content="Project detail — Matteo Vergari portfolio">
   <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23020810'/%3E%3Ctext x='4' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300e5ff'%3EMV%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080808'/%3E%3Ctext x='3' y='24' font-family='monospace' font-size='18' font-weight='900' fill='%23F5FF00'%3EMV%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
-  <!-- ── LOADING SCREEN ────────────────────────────────── -->
-  <div class="loader" id="loader">
+  <!-- LOADER -->
+  <div id="loader" aria-hidden="true">
     <div class="loader-logo">MV//</div>
-    <div class="loader-bar-wrap">
-      <div class="loader-bar"></div>
-    </div>
-    <div class="loader-text">LOADING PROJECT DATA</div>
+    <div class="loader-bar-bg"><div class="loader-bar-fill"></div></div>
+    <div class="loader-sub">Loading Project</div>
   </div>
 
-  <!-- ── ATMOSPHERIC FX ────────────────────────────────── -->
-  <div class="scanlines" aria-hidden="true"></div>
-  <div class="noise" aria-hidden="true"></div>
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar" aria-label="Info panels"></div>
 
-  <!-- ── NAVIGATION ───────────────────────────────────── -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a class="nav-logo" href="index.html" aria-label="Home">
-      MV<span>//</span>
-    </a>
-
-    <div class="nav-links">
-      <a href="index.html#projects">PROJECTS</a>
-      <a href="index.html#contact">CONTACT</a>
-    </div>
-
-    <!-- Neon color control -->
-    <div class="neon-control" aria-label="Neon color control">
-      <span class="neon-control-label">NEON</span>
-      <div class="neon-slider-wrap">
-        <span class="neon-slider-icon">Y</span>
-        <input type="range" id="neonSlider" min="55" max="200" value="185" aria-label="Neon hue">
-        <span class="neon-slider-icon">C</span>
-      </div>
-      <div class="neon-presets" aria-label="Color presets"></div>
+  <!-- NAV -->
+  <nav class="nav" aria-label="Main navigation">
+    <a class="nav-logo" href="index.html">MV<em>//</em></a>
+    <div class="nav-right">
+      <a class="nav-link" href="index.html#major">Projects</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
     </div>
   </nav>
 
-  <!-- ── PROJECT CONTENT (populated by JS) ─────────────── -->
-  <main id="projectContainer" role="main"></main>
+  <!-- PROJECT CONTENT (populated by JS) -->
+  <main id="projContainer" role="main"></main>
 
-  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="footer-logo">MV//</div>
-    <div class="footer-copy">
-      MATTEO VERGARI &nbsp;·&nbsp; <span id="footerYear"></span>
-    </div>
+    <div class="footer-copy">Matteo Vergari · <span id="year"></span></div>
     <div class="footer-status">
       <div class="status-dot" aria-hidden="true"></div>
-      AVAILABLE FOR WORK
+      Available for Work
     </div>
   </footer>
 
-  <!-- Mobile neon panel -->
-  <div class="neon-panel-mobile" aria-label="Neon color control">
-    <span class="neon-control-label">NEON COLOR</span>
-    <input type="range" id="neonSliderMobile" min="55" max="200" value="185" aria-label="Neon hue mobile">
-  </div>
-
-  <!-- Scripts — data first, then behavior -->
-  <script src="assets/js/projects-data.js"></script>
+  <!-- SCRIPTS -->
+  <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/project-page.js"></script>
-
-  <!-- Sync mobile slider -->
-  <script>
-    (function() {
-      var mob = document.getElementById('neonSliderMobile');
-      var desk = document.getElementById('neonSlider');
-      if (!mob || !desk) return;
-      mob.value = desk.value;
-      mob.addEventListener('input', function() {
-        desk.value = mob.value;
-        desk.dispatchEvent(new Event('input'));
-      });
-    })();
-  </script>
 </body>
 </html>
