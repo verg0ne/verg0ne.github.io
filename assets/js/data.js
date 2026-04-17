@@ -19,6 +19,7 @@
    ├── the-mall/
    ├── dont-panic/
    ├── tdvr/
+   ├── project-momentum/
    └── smaller/             ← optional thumbnails for minor projects
        ├── midnight-rider.jpg
        └── ...
@@ -106,6 +107,52 @@ const PROJECTS = [
     `,
     links: [
       { label: "VIEW ON GITHUB", url: "https://github.com/Verg0ne", type: "code" },
+    ],
+  },
+  {
+    id: "project-momentum",
+    title: "Project Momentum",
+    subtitle: "Endless Runner",
+    engine: "Unreal Engine 5 / C++",
+    teamSize: "Solo",
+    duration: "Ongoing",
+    tags: ["C++", "UE5", "Procedural", "Endless Runner", "Physics", "Solo"],
+    badge: "wip",
+    thumbnail: "assets/media/project-momentum/thumb.gif",
+    heroImage: "assets/media/project-momentum/hero.jpg",
+    images: [
+      "assets/media/project-momentum/screen-1.jpg",
+      "assets/media/project-momentum/screen-2.jpg",
+      "assets/media/project-momentum/screen-3.jpg",
+    ],
+    // videoId: "YOUTUBE_ID",         ← uncomment and fill in once you have a trailer
+    // videoFile: "assets/media/project-momentum/trailer.mp4",
+    shortDesc: "Rope-swinging endless runner set inside a gigantic abandoned megastructure. Fully procedurally generated — no two runs are the same. Flip, maneuver tightly, explore.",
+    fullDesc: `
+      <p>Project Momentum is a solo C++ / Unreal Engine 5 project currently in active development. The game is a rope-swinging endless runner set inside a colossal abandoned megastructure — a sprawling brutalist labyrinth of corridors, shafts, voids and decaying infrastructure that stretches further than any player will ever see in a single run.</p>
+      <p>Every run is procedurally generated from modular architectural chunks, meaning the layout, obstacles, hazards and spatial composition are never the same twice. The core loop is about momentum mastery — reading the space ahead, committing to swings, and chaining traversal to build and maintain speed.</p>
+      <h3>// Core Gameplay</h3>
+      <ul>
+        <li>Rope physics — dynamic grapple points, swing arcs, release timing</li>
+        <li>Tight spatial maneuvering through narrow corridors and open voids</li>
+        <li>Speed and flow as the primary win condition — no health, no lives, just momentum</li>
+        <li>Exploration layer — diverging paths, hidden geometry, risk/reward routing</li>
+      </ul>
+      <h3>// Technical Systems</h3>
+      <ul>
+        <li>Custom rope simulation in Blueprint — Customized physics, satisfying swing feeling</li>
+        <li>Procedural world generation via PCG and HISMs — chunk pooling system for seamless endless world integration</li>
+        <li>Seed based point grids for procedural layout and obstacle generation</li>
+        <li>Environmental variety system — lighting states, decay levels, hazard density vary per run</li>
+        <li>Performance budget management for seamless streaming with no visible seams</li>
+      </ul>
+      <h3>// Design Direction</h3>
+      <p>The megastructure setting is intentionally inspired by art pieces like Blame! and Naissancee. I aimed to recreate the feeling of absolute vastness and lack of human presence in the architecture.</p>
+      <p>The main focus of the game is on the movement system, focusing on having a satisfying feeling with a high skill ceiling, rewarding players for tight controls, precise timing and risk taking.</p>
+    `,
+    links: [
+      { label: "WISHLIST ON STEAM SOON", url: "https://store.steampowered.com", type: "store" },
+      { label: "FOLLOW ON ITCH.IO SOON", url: "https://itch.io",                type: "play"  },
     ],
   },
   {
